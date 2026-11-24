@@ -71,7 +71,7 @@ final class HeaderFooterDecorator extends ExporterDecorator {
         if (data.startsWith("[BASE64_CIPHERTEXT:") && data.endsWith("]")) {
             String encoded = data.substring("[BASE64_CIPHERTEXT:".length(), data.length() - 1);
             try { countSource = new String(Base64.getDecoder().decode(encoded), StandardCharsets.UTF_8); }
-            catch (IllegalArgumentException ignored) { /* Keep the original payload. */ }
+            catch (IllegalArgumentException ignored) { }
         }
         if (countSource.contains("\"records\": [")) {
             count = 0;

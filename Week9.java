@@ -1,5 +1,4 @@
 public class Week9 {
-    // Task 1: Access Control Proxy
     interface Image {
         void show();
     }
@@ -45,7 +44,6 @@ public class Week9 {
         }
     }
 
-    // Task 2: Tracking & Logging Proxy
     interface Video {
         void play();
     }
@@ -88,7 +86,6 @@ public class Week9 {
         }
     }
 
-    // Task 3: School Wi-Fi Firewall
     interface Internet {
         void connectTo(String site);
     }
@@ -116,7 +113,6 @@ public class Week9 {
         }
     }
 
-    // Task 4 & 5: Devices & Remotes
     interface Device {
         void turnon();
         void turnoff();
@@ -196,7 +192,6 @@ public class Week9 {
         }
     }
 
-    // Task 6: RPG Game Weapon System
     interface Weapon {
         void use();
     }
@@ -248,35 +243,29 @@ public class Week9 {
     }
 
     public static void main(String[] args) {
-        // --- Task 1 ---[span_0](start_span)[span_0](end_span)
         Image guestProxy = new ProxyImage("salary_sheet.png", "GUEST");
         guestProxy.show();
         Image adminProxy = new ProxyImage("salary_sheet.png", "ADMIN");
         adminProxy.show();
 
-        // --- Task 2 ---[span_1](start_span)[span_1](end_span)
         Video videoProxy = new ProxyVideo("Cat_Memes.mp4");
         videoProxy.play();
         videoProxy.play();
         videoProxy.play();
 
-        // --- Task 3 ---[span_2](start_span)[span_2](end_span)
         Internet internet = new SchoolProxyInternet();
         internet.connectTo("wikipedia.org");
         internet.connectTo("gaming.com");
 
-        // --- Task 4 ---[span_3](start_span)[span_3](end_span)[span_4](start_span)[span_4](end_span)
         Device light = new SmartLight();
         AdvancedRemote remote = new AdvancedRemote(light);
         remote.poweron();
         remote.mute();
 
-        // --- Task 5 ---[span_5](start_span)[span_5](end_span)
         Device radio = new Radio();
         PartyRemote partyRemote = new PartyRemote(radio);
         partyRemote.partyMode();
 
-        // --- Task 6 ---[span_6](start_span)[span_6](end_span)
         Hero knightWithSword = new Knight(new Sword());
         knightWithSword.attack();
 

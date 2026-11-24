@@ -1,6 +1,5 @@
 public class Main {
     public static void main(String[] args) {
-        // Main knows NOTHING about the 5 underlying subsystems.
         FlightBookingFacade bookingFacade = new FlightBookingFacade();
 
         System.out.println("=== TEST 1: Standard Successful Booking ===");
@@ -38,7 +37,7 @@ public class Main {
                 1,
                 18.0,
                 "KZT",
-                "9999" // Invalid short card number triggers rollback
+                "9999"
         );
         System.out.println("Result 3: " + ticket3 + "\n");
 
@@ -70,7 +69,6 @@ public class Main {
         );
         System.out.println("Result 5: " + ticket5 + "\n");
 
-        // Scenarios A, B, C from Section 3 of the lab task
         System.out.println("=== SCENARIO A: Valid Booking (KZ204, 14B, 2 bags 24.5 kg, EUR) ===");
         String scenarioA = bookingFacade.bookFlight(
                 "Aigerim Sadykova",
